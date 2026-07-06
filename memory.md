@@ -18,6 +18,5 @@ velocity-lms-api: local path C:\laragon\www\vLms, remote https://kuber.sardardi.
 velocity-los-api: local path C:\laragon\www\vLos, remote https://kuber.sardardi.in/velocity/velocity-los-api/
 velocity-crm-api: local path C:\laragon\www\vCrm, remote https://kuber.sardardi.in/velocity/velocity-crm-api/
 velocity-auth-api: local path C:\laragon\www\vAuth, remote https://kuber.sardardi.in/velocity/velocity-auth-api/
-Code review steps: get branch name → checkout locally → git pull origin {branch} → git pull origin master → then begin review.
 
 MR Review Protocol: When any MR is shared for review — (1) review seriously and thoroughly, (2) check security gates and code quality, (3) check for syntax issues, (4) check for bugs and logic errors, (5) post inline comments on specific lines using gitlab:create_merge_request_thread, (6) post a full summary comment on the MR using gitlab:create_merge_request_note, and (7) after posting the GitLab review, send the review summary (key findings + MR link) to the MR author as a 1:1 DM via the Teams MCP (teams-mcp) — match the author to the correct Teams user before sending. Always deliver feedback directly on the MR via GitLab MCP tools and notify the author via Teams DM.
