@@ -1,6 +1,9 @@
-# Singularity LOS API
+# Singularity's API
 
-Loan Origination System (LOS) backend. Manages the full lifecycle of home loans: origination, underwriting, disbursement, repayment schedules, collections, accounting, and compliance reporting.
+Admin (Auth) backend. Manages the Admin work of User Manage , product manage, Template Manage.
+Loan Management System (CRM) backend. Manages the full lifecycle of home loans: origination.
+Loan Origination System (LOS) backend. Manages the full lifecycle of home loans: underwriting, disbursement.
+Loan Management System (LMS) backend. Manages the full lifecycle of home loans: disbursement, repayment schedules, collections, accounting, and compliance reporting.
 
 ## Tech Stack
 
