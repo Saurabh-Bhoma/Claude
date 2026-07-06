@@ -1,0 +1,31 @@
+## Rules
+- Cognitive Complexity of functions should not be too high 15 allowed.
+- All code should be reachable
+- Functions should not contain too many return statements 4 allowed
+- Functions should not have too many parameters 7 allowed
+- Follow the SOLID principles:
+  - **S**: Single Responsibility Principle - A class should have one and only one reason to change, meaning it should have only one job.
+  - **O**: Open/Closed Principle - Software entities should be open for extension but closed for modification.
+  - **L**: Liskov Substitution Principle - Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.
+  - **I**: Interface Segregation Principle - A client should never be forced to implement an interface it doesn’t use.
+  - **D**: Dependency Inversion Principle - High-level modules should not depend on low-level modules. Both should depend on abstractions.
+- Write self-documenting code: Use meaningful variable, function, and class names to make the code easier to understand.
+- Adhere to consistent code formatting: Follow a standard style guide for indentation, spacing, and braces.
+- Avoid magic numbers: Replace them with named constants to improve readability and maintainability.
+- Write unit tests: Ensure that all critical code paths are covered by automated tests.
+- Limit function length: Functions should ideally be short and perform a single task.
+- Use comments sparingly: Write comments only when the code’s intent is not obvious.
+- Handle exceptions properly: Use try-catch blocks to handle errors gracefully and avoid application crashes.
+- Avoid deep nesting: Refactor code to reduce nested loops and conditionals.
+- Unit Testing:
+  - Write unit tests for all critical code paths to ensure correctness.
+  - Use a testing framework to automate and organize tests.
+  - Mock external dependencies to isolate the unit being tested.
+  - Ensure tests are repeatable and produce consistent results.
+  - Follow the Arrange-Act-Assert (AAA) pattern for structuring test cases.
+
+### Code Rules
+- **Naming Convention Rule**: 
+ - Use `snake_case` for database columns 
+ - Use `camelCase` for variables and methods 
+ - Use  `PascalCase` for class and filename

@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push * --force*)",
+      "Bash(git checkout master)",
+      "Bash(git checkout main)",
+      "Bash(rm -rf /*)",
+      "Bash(*DROP TABLE*)",
+      "Bash(*DROP DATABASE*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'FILE=$(echo \"$CLAUDE_TOOL_INPUT\" | jq -r \".file_path // .filePath // empty\"); if [[ \"$FILE\" == *.php ]] && [[ -f \"$FILE\" ]]; then php -l \"$FILE\" 2>&1; fi'"
+          },
+          {
+            "type": "command",
+            "command": "bash -c 'FILE=$(echo \"$CLAUDE_TOOL_INPUT\" | jq -r \".file_path // .filePath // empty\"); if [[ \"$FILE\" == *.php ]] && [[ -f \"$FILE\" ]]; then MATCHES=$(grep -n \"\\bdd(\\|\\bdump(\\|\\bvar_dump(\\|\\bprint_r(\\|Log::debug(\" \"$FILE\" 2>/dev/null); if [[ -n \"$MATCHES\" ]]; then echo \"WARNING: Debug statements found in $FILE:\"; echo \"$MATCHES\"; echo \"Remove before committing.\"; fi; fi'"
+          }
+        ]
+      }
+    ]
+  }
+}
