@@ -19,6 +19,17 @@ All project patterns, code style, and codebase structure are in CLAUDE.md -- fol
 2. **Search for reuse** -- check traits/helpers/services before writing new logic.
 3. **Verify after writing** -- `php -l` on every changed file. Run tests if they exist.
 
+## Code Style
+
+- **Assignment operator**: Single space on both sides: `$var = $value`. Never aligned padding like `$var      = $value`.
+- **Style enforcement**: StyleCI runs on push (Laravel preset). `unused_use` rule is disabled — do not add unused imports, but do not remove existing ones in files you did not author.
+- **Response format**: Use `$this->positiveResponse($message, $data)` or `$this->negativeResponse($message, $errorId, $errors)` from the Responder trait.
+- **Credentials**: Never hardcode. Use `env()` helper or config files.
+- **New controllers**: Extend `Controller`, use `Responder` trait, place in `app/Http/Controllers/V1/{Domain}/`.
+- **New models**: Set `$connection`, `$table` (with `s_` prefix), and `$fillable`.
+- **Debug statements**: Never leave `dd()`, `dump()`, `var_dump()`, `print_r()`, or `Log::debug()` in committed code.
+- **Type hints**: Use scalar type hints and return types on new methods. Avoid returning mixed `false`/`null` for errors — throw exceptions instead.
+
 ## Rules
 
 - NEVER modify files you haven't read first.
